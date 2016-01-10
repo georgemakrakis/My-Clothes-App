@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="MyClothes.MainMenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyClothes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!--<Grid Background="#FF0F0E0E" Opacity="0.5" VerticalAlignment="Stretch">-->
+
+            <StackPanel>
+                <StackPanel.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/h_blur1.jpg" Opacity="0.55"/>
+                    
+            </StackPanel.Background>
+                <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" Foreground="Black" />
+            </StackPanel>
+            <StackPanel Name="MenuOptions" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" >
+                <Button x:Name="Add_new_Clothes" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="Add new Clothes" Click="Add_new_Clothes_Click" HorizontalAlignment="Stretch" />
+                <Button x:Name="Search_Button" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="Search for clothes" Click="Search_Button_Click"/>
+                <Button x:Name="View_Collection_Button" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="View collection" HorizontalAlignment="Stretch" Click="View_Collection_Button_Click"/>
+                <Button x:Name="View_Favourite" Content="View favourite" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" HorizontalAlignment="Stretch" Click="View_Favourite_Button_cCick"/>
+                <Button x:Name="Make_Combination" Content="Make combination" HorizontalAlignment="Stretch" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Click="Make_Combination_Button_Click"/>
+            </StackPanel>
+            <AppBarButton HorizontalAlignment="Left" Icon="Back" Label=""  VerticalAlignment="Bottom" Click="AppBarButton_Click" Foreground="White" BorderThickness="0"/>
+        </Grid>
+    <!--</Grid>-->
+</Page>

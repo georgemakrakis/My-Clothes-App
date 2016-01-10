@@ -1,0 +1,89 @@
+﻿<Page    
+    x:Class="MyClothes.InsertClothes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyClothes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/12355276_1044905652198706_856396569_n.jpg"/>
+        </Grid.Background>
+        <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <TextBlock Foreground="White" Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40"  />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <TextBlock Text="Pick Season" Foreground="Black" TextWrapping="Wrap" HorizontalAlignment="Left"  FontSize="20" />
+
+            <ComboBox x:Name="ComboBoxSeason"  HorizontalAlignment="Left" Height="71" Width="326" Background="{x:Null}" BorderBrush="Black" Foreground="Black" >
+                <ComboBoxItem Content="None" IsSelected="True"/>
+                <ComboBoxItem Content="Winter" />
+                <ComboBoxItem Content="Spring-Autumn"/>
+                <ComboBoxItem Content="Summer" />
+                <ComboBoxItem Content="All"/>
+                <ComboBoxItem/>
+                <!-- prepei na to kanoume drop down menu omorfo -->
+                <ComboBoxItem/>
+                <!-- prepei na to kanoume drop down menu omorfo -->
+            </ComboBox>
+
+            <TextBlock FontSize="20" Text="Pick Category" Foreground="Black" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+            <ComboBox x:Name="ComboBoxCategory" BorderBrush="Black"  HorizontalAlignment="Left" Height="71" Width="326">
+                <ComboBoxItem Content="None" IsSelected="True"/>
+                <ComboBoxItem Content="Casual"/>
+                <ComboBoxItem Content="Formal"/>
+                <ComboBoxItem Content="Training" />
+                <ComboBoxItem Content="Dresses"/>
+                <ComboBoxItem Content="Shoes"/>
+                <ComboBoxItem Content="Accesories"/>
+            </ComboBox>
+            <TextBlock FontSize="20" Foreground="Black" Text="Pick Kind" TextWrapping="Wrap" HorizontalAlignment="Left"  />
+            <ComboBox x:Name="ComboBoxKind" Foreground="Black" BorderBrush="Black"  HorizontalAlignment="Left" Height="71" Width="326">
+                <ComboBoxItem Content="None" IsSelected="True"/>
+                <ComboBoxItem Content="T-Shirt-Polos" IsSelected="True"/>
+                <ComboBoxItem Content="Shirt"/>
+                <ComboBoxItem Content="Long Sleeve" />
+                <ComboBoxItem Content="Sleeveless"/>
+                <ComboBoxItem Content="Dresses"/>
+                <ComboBoxItem Content="Jeans-Trousers"/>
+                <ComboBoxItem Content="Shorts"/>
+                <ComboBoxItem Content="Skirt"/>
+                <ComboBoxItem Content="Sneakers"/>
+                <ComboBoxItem Content="Boots"/>
+                <ComboBoxItem Content="Loafers"/>
+                <ComboBoxItem Content="Sport"/>
+                <ComboBoxItem Content="Heels"/>
+                <ComboBoxItem Content="Flat Shoes"/>
+                <ComboBoxItem Content="Sunglasses"/>
+                <ComboBoxItem Content="Hats"/>
+                <ComboBoxItem Content="Watch"/>
+                <ComboBoxItem Content="Jewellery"/>
+                <ComboBoxItem Content="Bags"/>
+                <ComboBoxItem Content="Scarf"/>
+                <ComboBoxItem Content="Jackets-Coats"/>
+                <ComboBoxItem Content="Hoodies"/>
+            </ComboBox>
+            <TextBox HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="More Details.." Height="139"  Width="400"   />
+            <TextBlock Text="Warning!!" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+        </StackPanel>
+
+       
+            <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="193*"/>
+                    <ColumnDefinition Width="207*"/>
+                </Grid.ColumnDefinitions>
+                <AppBarButton x:ConnectionId='1' x:Name="Cancel_Button" HorizontalAlignment="Left"  Icon="Cancel" Label="Cancel"                             Grid.Column="1" />
+                <AppBarButton x:ConnectionId='2' x:Name="Insert_Button" HorizontalAlignment="Right"  Icon="Accept" Label="Insert"                             Grid.Column="0"/>
+                <AppBarButton x:ConnectionId='3' x:Name="Back_Button" VerticalAlignment="Bottom" HorizontalAlignment="Left" Icon="Back" Label=""                           />
+            </Grid>
+    
+
+    </Grid>
+</Page>
+

@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="MyClothes.CameraPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyClothes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid >
+        <CaptureElement x:Name="previewElement" Stretch="UniformToFill" />
+        <Border x:Name="finalPhotoAreaBorder" BorderBrush="Red" BorderThickness="2" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top"></Border>
+        <Image x:Name="takenImage" Stretch="UniformToFill" Visibility="Collapsed"></Image>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+            <AppBarButton x:ConnectionId='2' x:Name="Save_Btn" HorizontalAlignment="Center" Icon="Camera" Label=""  VerticalAlignment="Top"                       />
+            <AppBarButton x:ConnectionId='3' x:Name="Back_Btn" HorizontalAlignment="Left" Icon="Back" Label="" VerticalAlignment="Bottom"                       />
+            
+            <AppBarButton x:ConnectionId='4' x:Name="Save_Btn1" HorizontalAlignment="Right" Icon="Save" Label=""  VerticalAlignment="Top"                        />
+        </Grid>
+        <AppBarButton x:ConnectionId='1' x:Name="Capture_Btn" HorizontalAlignment="Right" Icon="View" Label="Camera Off" VerticalAlignment="Top"                          />
+    </Grid>
+</Page>
+
