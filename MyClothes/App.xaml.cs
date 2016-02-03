@@ -18,6 +18,10 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.WindowsAzure.MobileServices;
 using MyClothes.Helpers;
+using Windows.Storage;
+using SQLite;
+using MyClothes.Model;
+using System.Threading.Tasks;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -35,8 +39,9 @@ namespace MyClothes
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         /// 
-        public static MobileServiceClient MobileService = new MobileServiceClient("https://makrakis.azurewebsites.net");
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://myclothes.azurewebsites.net");
 
+        public static string db_path = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "ClothesManager.sqlite"));
         public App()
         {
             this.InitializeComponent();
@@ -45,7 +50,31 @@ namespace MyClothes
             ContinuationManager = new ContinuationManager();
 
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            //DataBase Name 
+            if (!CheckFileExists("Clothes_IDManager.sqlite").Result)
+            {
+                using (var db = new SQLiteConnection(db_path))
+                {
+                    db.CreateTable<Clothes_ID>();
+                }
+            }
         }
+
+        #region DatabaseTools
+        private async Task<bool> CheckFileExists(string fileName)
+        {
+            try
+            {
+                var store = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+                return true;
+            }
+            catch
+            {
+            }
+            return false;
+        }
+        #endregion
         void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
@@ -63,16 +92,17 @@ namespace MyClothes
 
         protected override void OnActivated(IActivatedEventArgs args)
         {
+            // Windows Phone 8.1 requires you to handle the respose from the WebAuthenticationBroker.
+#if WINDOWS_PHONE_APP
             if (args.Kind == ActivationKind.WebAuthenticationBrokerContinuation)
             {
-                var continuationEventArgs = args as IContinuationActivatedEventArgs;
-                if (continuationEventArgs != null)
-                {
-                    ContinuationManager.Continue(continuationEventArgs);
-                    ContinuationManager.MarkAsStale();
-                }
-
+                // Completes the sign-in process started by LoginAsync.
+                // Change 'MobileService' to the name of your MobileServiceClient instance. 
+                App.MobileService.LoginComplete(args as WebAuthenticationBrokerContinuationEventArgs);
             }
+#endif
+
+            base.OnActivated(args);
         }
 
 

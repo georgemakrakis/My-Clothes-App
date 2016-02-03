@@ -14,13 +14,15 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="Assets/12355276_1044905652198706_856396569_n.jpg"/>
         </Grid.Background>
-        <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Stretch">
-            <TextBlock Foreground="White" Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40"  />
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            <TextBlock Text="Pick Season" Foreground="Black" TextWrapping="Wrap" HorizontalAlignment="Left"  FontSize="20" />
 
-            <ComboBox x:Name="ComboBoxSeason"  HorizontalAlignment="Left" Height="71" Width="326" Background="{x:Null}" BorderBrush="Black" Foreground="Black" >
+        <Grid Background="#FF0F0E0E" Opacity="0.45" VerticalAlignment="Stretch">
+        </Grid>
+
+        <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <TextBlock Text="Pick Season" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left"  FontSize="20" />
+
+            <ComboBox x:Name="ComboBoxSeason"  HorizontalAlignment="Left" Height="71" Width="326" Background="{x:Null}" BorderBrush="White" Foreground="White" >
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="Winter" />
                 <ComboBoxItem Content="Spring-Autumn"/>
@@ -32,8 +34,8 @@
                 <!-- prepei na to kanoume drop down menu omorfo -->
             </ComboBox>
 
-            <TextBlock FontSize="20" Text="Pick Category" Foreground="Black" TextWrapping="Wrap" HorizontalAlignment="Left"/>
-            <ComboBox x:Name="ComboBoxCategory" BorderBrush="Black"  HorizontalAlignment="Left" Height="71" Width="326">
+            <TextBlock FontSize="20" Text="Pick Category" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+            <ComboBox x:Name="ComboBoxCategory" BorderBrush="White"  HorizontalAlignment="Left" Height="71" Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="Casual"/>
                 <ComboBoxItem Content="Formal"/>
@@ -42,10 +44,10 @@
                 <ComboBoxItem Content="Shoes"/>
                 <ComboBoxItem Content="Accesories"/>
             </ComboBox>
-            <TextBlock FontSize="20" Foreground="Black" Text="Pick Kind" TextWrapping="Wrap" HorizontalAlignment="Left"  />
-            <ComboBox x:Name="ComboBoxKind" Foreground="Black" BorderBrush="Black"  HorizontalAlignment="Left" Height="71" Width="326">
+            <TextBlock FontSize="20" Foreground="White" Text="Pick Kind" TextWrapping="Wrap" HorizontalAlignment="Left"  />
+            <ComboBox x:Name="ComboBoxKind" Foreground="Black" BorderBrush="White"  HorizontalAlignment="Left" Height="71" Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
-                <ComboBoxItem Content="T-Shirt-Polos" IsSelected="True"/>
+                <ComboBoxItem Content="T-Shirt-Polos"/>
                 <ComboBoxItem Content="Shirt"/>
                 <ComboBoxItem Content="Long Sleeve" />
                 <ComboBoxItem Content="Sleeveless"/>
@@ -75,8 +77,8 @@
        
             <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="193*"/>
-                    <ColumnDefinition Width="207*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <AppBarButton x:Name="Cancel_Button" HorizontalAlignment="Left"  Icon="Cancel" Label="Cancel" Click="Cancel_Button_click" Grid.Column="1" />
                 <AppBarButton x:Name="Insert_Button" HorizontalAlignment="Right"  Icon="Accept" Label="Insert" Click="Insert_Button_Click" Grid.Column="0"/>

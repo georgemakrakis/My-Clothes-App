@@ -9,22 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
     DataContext="{Binding MainPageViewModel,RelativeSource={RelativeSource Mode=Self}}">
 
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="73*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="33*"/>
-            <RowDefinition Height="127*"/>
-        </Grid.RowDefinitions>
+
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="Assets/l_blur.jpg"/>
         </Grid.Background>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2.423,6.5,37,138" Grid.Row="1" Grid.Column="1">
-            <TextBlock Text="Pick Filter for Season" HorizontalAlignment="Stretch" TextWrapping="Wrap"  FontSize="20" />
 
-            <ComboBox x:Name="ComboBoxSeason" HorizontalAlignment="Stretch"  Height="71"  Width="326">
+        <Grid Background="#FF0F0E0E" Opacity="0.45" VerticalAlignment="Stretch">
+        </Grid>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBlock Text="Pick Filter for Season" Foreground="White" HorizontalAlignment="Stretch" TextWrapping="Wrap"  FontSize="20" />
+
+            <ComboBox x:Name="ComboBoxSeason" Foreground="White" HorizontalAlignment="Stretch"  Height="71"  Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="Winter" />
                 <ComboBoxItem Content="Spring-Autumn"/>
@@ -36,8 +34,8 @@
                 <!-- prepei na to kanoume drop down menu omorfo -->
             </ComboBox>
 
-            <TextBlock FontSize="20" HorizontalAlignment="Stretch" Text="Pick Filter for Category" TextWrapping="Wrap"   />
-            <ComboBox x:Name="ComboBoxCategory" HorizontalAlignment="Stretch"   Height="71"  Width="326">
+            <TextBlock FontSize="20" Foreground="White" HorizontalAlignment="Stretch" Text="Pick Filter for Category" TextWrapping="Wrap"   />
+            <ComboBox x:Name="ComboBoxCategory" Foreground="White" HorizontalAlignment="Stretch"   Height="71"  Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="Casual" />
                 <ComboBoxItem Content="Formal"/>
@@ -46,8 +44,8 @@
                 <ComboBoxItem Content="Shoes"/>
                 <ComboBoxItem Content="Accesories"/>
             </ComboBox>
-            <TextBlock FontSize="20" HorizontalAlignment="Stretch"  Text="Pick Filter for Kind" TextWrapping="Wrap"  />
-            <ComboBox x:Name="ComboBoxKind" HorizontalAlignment="Stretch"  Height="71" Width="326">
+            <TextBlock FontSize="20" Foreground="White" HorizontalAlignment="Stretch"  Text="Pick Filter for Kind" TextWrapping="Wrap"  />
+            <ComboBox x:Name="ComboBoxKind" Foreground="White" HorizontalAlignment="Stretch"  Height="71" Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="T-Shirt-Polos" />
                 <ComboBoxItem Content="Shirt"/>
@@ -75,11 +73,22 @@
             <AppBarButton x:ConnectionId='2' HorizontalAlignment="Center"                             Icon="Zoom" Label="" />
         </StackPanel>
         <AppBarButton x:ConnectionId='1' x:Name="Back_Button" HorizontalAlignment="Left" Icon="Back" Label="" VerticalAlignment="Bottom"                           Grid.Row="1" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Today's Temperature" Grid.Column="1" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Height="auto"  Width="auto" FontSize="20"/>
-        <TextBlock Text="{Binding CurrentConditionsTemperature, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Right"  TextWrapping="Wrap" VerticalAlignment="Center" Height="auto"  Width="auto" FontSize="20"/>
-        <ProgressRing IsActive="{Binding ProgressVisible, Mode=OneWay}" Grid.Column="1" Margin="204,17,72,16.667" Background=""/>
-        
+
+        <StackPanel>
+        <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Today's Temperature"  HorizontalAlignment="Stretch" Grid.Column="0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="auto"  Width="auto" FontSize="20"/>
+            <TextBlock Text="{Binding CurrentConditionsTemperature, Mode=OneWay}"  HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Top" Height="auto"  Width="auto" FontSize="20" Grid.Column="1"/>
+            <ProgressRing IsActive="{Binding ProgressVisible, Mode=OneWay}" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Background="" Grid.Column="1"/>
+        </Grid>
+        </StackPanel>
 
     </Grid>
+
 </Page>
 

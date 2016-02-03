@@ -10,21 +10,22 @@
 
     <Grid>
         <!--<Grid Background="#FF0F0E0E" Opacity="0.5" VerticalAlignment="Stretch">-->
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/h_blur1.jpg" Opacity="0.55"/>
+        </Grid.Background>
 
-            <StackPanel>
-                <StackPanel.Background>
-                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/h_blur1.jpg" Opacity="0.55"/>
-                    
-            </StackPanel.Background>
-                <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" Foreground="Black" />
-            </StackPanel>
-            <StackPanel Name="MenuOptions" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" >
-                <Button x:Name="Add_new_Clothes" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="Add new Clothes" Click="Add_new_Clothes_Click" HorizontalAlignment="Stretch" />
-                <Button x:Name="Search_Button" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="Search for clothes" Click="Search_Button_Click"/>
-                <Button x:Name="View_Collection_Button" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="View collection" HorizontalAlignment="Stretch" Click="View_Collection_Button_Click"/>
-                <Button x:Name="View_Favourite" Content="View favourite" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" HorizontalAlignment="Stretch" Click="View_Favourite_Button_cCick"/>
-                <Button x:Name="Make_Combination" Content="Make combination" HorizontalAlignment="Stretch" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Click="Make_Combination_Button_Click"/>
-            </StackPanel>
+        <Grid Background="#FF0F0E0E" Opacity="0.1" VerticalAlignment="Stretch">
+        </Grid>
+        
+        <StackPanel Name="MenuOptions" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" >
+            <Button x:Name="Add_new_Clothes" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Content="Add new Clothes" Click="Add_new_Clothes_Click" HorizontalAlignment="Stretch" />
+            <Button x:Name="Search_Button" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Content="Search for clothes" Click="Search_Button_Click"/>
+            <Button x:Name="View_Collection_Button" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Content="View collection" HorizontalAlignment="Stretch" Click="View_Collection_Button_Click"/>
+            <Button x:Name="View_Favourite" Content="View favourite" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" HorizontalAlignment="Stretch" Click="View_Favourite_Button_cCick"/>
+            <Button x:Name="Make_Combination" Content="Make combination" HorizontalAlignment="Stretch" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Click="Make_Combination_Button_Click"/>
+        </StackPanel>
+        
+            <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
             <AppBarButton HorizontalAlignment="Left" Icon="Back" Label=""  VerticalAlignment="Bottom" Click="AppBarButton_Click" Foreground="White" BorderThickness="0"/>
         </Grid>
     <!--</Grid>-->

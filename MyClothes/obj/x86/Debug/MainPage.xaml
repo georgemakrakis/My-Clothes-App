@@ -15,9 +15,11 @@
         </Grid.Background>
         <Grid Background="#FF0F0E0E" Opacity="0.45" VerticalAlignment="Stretch">
             <StackPanel Name="User" VerticalAlignment="Bottom" Margin="0,0,0,52" >
-                <Button x:ConnectionId='3'  x:Name="FbLogin" VerticalAlignment="Center" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in"                       />
-                <Button x:ConnectionId='4'  x:Name="FbLogout" VerticalAlignment="Center"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out"                       />
-                <TextBlock Text="Warning" FontSize="20" HorizontalAlignment="Center" Foreground="#FFFDF6F6" />
+                <TextBlock Text="Warning" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" />
+                <Grid>
+                    <Button x:ConnectionId='3'  x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in"                       />
+                    <Button x:ConnectionId='4'  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out"                       />
+                </Grid>
                 <TextBox Text="UserName" FontSize="20" />
                 <TextBox Text="PassWord" FontSize="20"/>
                 <TextBlock Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />

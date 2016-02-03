@@ -21,7 +21,7 @@
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="Assets/l_blur.jpg"/>
         </Grid.Background>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2.423,6.5,37,138" Grid.Row="1" Grid.Column="1">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Pick Filter for Season" HorizontalAlignment="Stretch" TextWrapping="Wrap"  FontSize="20" />
 
             <ComboBox x:Name="ComboBoxSeason" HorizontalAlignment="Stretch"  Height="71"  Width="326">

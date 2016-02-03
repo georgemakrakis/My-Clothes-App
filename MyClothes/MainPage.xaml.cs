@@ -35,67 +35,31 @@ namespace MyClothes
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public string AccessToken;
-        public DateTime TokenExpiry;
 
-        private async void Login()
+        private MobileServiceUser user;
+
+        private async System.Threading.Tasks.Task<bool> AuthenticateAsync()
         {
-            //Facebook app id
-            var clientId = "451251791732276";
-            //Facebook permissions
-            var scope = "public_profile, email";
-
-            var redirectUri = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
-            var fb = new FacebookClient();
-            var loginUrl = fb.GetLoginUrl(new
+            string message;
+            bool success = false;
+            try
             {
-                client_id = clientId,
-                redirect_uri = redirectUri,
-                response_type = "token",
-                scope = scope
-            });
-            Debug.WriteLine(redirectUri);
-            Uri startUri = loginUrl;
-            Uri endUri = new Uri(redirectUri, UriKind.Absolute);
+                // Change 'MobileService' to the name of your MobileServiceClient instance.
+                // Sign-in using Facebook authentication.
+                user = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                message =string.Format("You are now signed in - {0}", user.UserId);
 
-            
-            WebAuthenticationBroker.AuthenticateAndContinue(startUri, endUri, null, WebAuthenticationOptions.None);
-
-        }
-        public async void ContinueWebAuthentication(WebAuthenticationBrokerContinuationEventArgs args)
-        {
-            await ParseAuthenticationResult(args.WebAuthenticationResult);
-        }
-        public async Task ParseAuthenticationResult(WebAuthenticationResult result)
-        {
-            switch (result.ResponseStatus)
-            {
-                case WebAuthenticationStatus.ErrorHttp:
-                    Debug.WriteLine("Error");
-                    break;
-                case WebAuthenticationStatus.Success:
-                    var pattern = string.Format("{0}#access_token={1}&expires_in={2}", WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), "(?<access_token>.+)", "(?<expires_in>.+)");
-                    var match = Regex.Match(result.ResponseData, pattern);
-
-                    var access_token = match.Groups["access_token"];
-                    var expires_in = match.Groups["expires_in"];
-
-                    AccessToken = access_token.Value;
-                    TokenExpiry = DateTime.Now.AddSeconds(double.Parse(expires_in.Value));
-
-                    break;
-                case WebAuthenticationStatus.UserCancel:
-                    Debug.WriteLine("Operation aborted");
-                    break;
-                default:
-                    break;
+                success = true;
             }
-        }
-        private async Task ShowUserInfo()
-        {
-            FacebookClient client = new FacebookClient(AccessToken);
-            dynamic user = await client.GetTaskAsync("me");
-            User1.Text = user.name;
+            catch (InvalidOperationException)
+            {
+                message = "You must log in. Login Required";
+            }
+
+            var dialog = new MessageDialog(message);
+            dialog.Commands.Add(new UICommand("OK"));
+            await dialog.ShowAsync();
+            return success;
         }
         //IfUsed
         #region AzuremobileServiceFbLogin
@@ -235,12 +199,13 @@ namespace MyClothes
             Frame.Navigate(typeof(RegistrationPage));
         }
 
-        private void FbLogin_Click(object sender, RoutedEventArgs e)
+        private async void FbLogin_Click(object sender, RoutedEventArgs e)
         {
-            Login();
+            if (await AuthenticateAsync())
+            {
+                Frame.Navigate(typeof(MainMenuPage));
+            }
         }
-
-        Uri _logoutUrl;
         private void FbLogout_Click(object sender, RoutedEventArgs e)
         {
                         

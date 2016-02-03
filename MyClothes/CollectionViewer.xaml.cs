@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MyClothes.Local_Database;
+using MyClothes.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,6 +26,8 @@ namespace MyClothes
     /// </summary>
     public sealed partial class CollectionViewer : Page
     {
+        ObservableCollection<Clothes_ID> DB_List = new ObservableCollection<Clothes_ID>();
+
         public CollectionViewer()
         {
             this.InitializeComponent();
@@ -57,6 +62,22 @@ namespace MyClothes
 
         }
 
-      
+        private void AddContact_Click(object sender, RoutedEventArgs e)
+        {
+            ReadClothesList db_clothes = new ReadClothesList();
+            DB_List = db_clothes.GetAllClothes();//Get all DB contacts   
+            //if (DB_List.Count > 0)
+            //{
+            //    Btn_Delete.IsEnabled = true;
+            //}
+            listBoxobj.ItemsSource = DB_List.OrderByDescending(i => i.id).ToList();//Binding DB data to LISTBOX and Latest contact ID can Display first. 
+        }
+
+        private void listBoxobj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
     }
 }

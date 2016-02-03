@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyClothes.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -52,15 +54,37 @@ namespace MyClothes
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
-        
+
         private void Cancel_Button_click(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();
         }
 
-        private void Insert_Button_Click(object sender, RoutedEventArgs e)
+        private async void Insert_Button_Click(object sender, RoutedEventArgs e)
         {
+            DatabaseHelperClass db_helper = new DatabaseHelperClass();
+            //Creating object for DatabaseHelperClass.cs
 
+            //Create a unique ID
+            /*Guid guid = Guid.NewGuid();
+            string str = guid.ToString();
+            int unique = Convert.ToInt32(str);
+            */
+            string season = ((ComboBoxItem)ComboBoxSeason.SelectedItem).Content.ToString();
+            string category= ((ComboBoxItem)ComboBoxCategory.SelectedItem).Content.ToString();
+            string kind = ((ComboBoxItem)ComboBoxKind.SelectedItem).Content.ToString();
+            if (season.Equals("None") || category.Equals("None") || kind.Equals("None") )
+            {
+                MessageDialog messageDialog = new MessageDialog("Please fill three fields");
+                //Combobox should not be none   
+                await messageDialog.ShowAsync();
+            }
+            else
+            {
+                db_helper.Insert(new Clothes_ID(ComboBoxSeason.SelectedItem.ToString(), ComboBoxCategory.SelectedItem.ToString(), ComboBoxKind.SelectedItem.ToString()));
+                MessageDialog messageDialog = new MessageDialog("Insert Successfull");
+                await messageDialog.ShowAsync();
+            }
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

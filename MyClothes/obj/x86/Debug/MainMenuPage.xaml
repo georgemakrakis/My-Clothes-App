@@ -10,21 +10,22 @@
 
     <Grid>
         <!--<Grid Background="#FF0F0E0E" Opacity="0.5" VerticalAlignment="Stretch">-->
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/h_blur1.jpg" Opacity="0.55"/>
+        </Grid.Background>
 
-            <StackPanel>
-                <StackPanel.Background>
-                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/h_blur1.jpg" Opacity="0.55"/>
-                    
-            </StackPanel.Background>
-                <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" Foreground="Black" />
-            </StackPanel>
-            <StackPanel Name="MenuOptions" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" >
-                <Button x:ConnectionId='2' x:Name="Add_new_Clothes" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="Add new Clothes"                               HorizontalAlignment="Stretch" />
-                <Button x:ConnectionId='3' x:Name="Search_Button" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="Search for clothes"                            />
-                <Button x:ConnectionId='4' x:Name="View_Collection_Button" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" Content="View collection" HorizontalAlignment="Stretch"                                     />
-                <Button x:ConnectionId='5' x:Name="View_Favourite" Content="View favourite" FontWeight="Bold"  Foreground="Black" BorderBrush="Black" HorizontalAlignment="Stretch"                                    />
-                <Button x:ConnectionId='6' x:Name="Make_Combination" Content="Make combination" HorizontalAlignment="Stretch" FontWeight="Bold"  Foreground="Black" BorderBrush="Black"                                      />
-            </StackPanel>
+        <Grid Background="#FF0F0E0E" Opacity="0.1" VerticalAlignment="Stretch">
+        </Grid>
+        
+        <StackPanel Name="MenuOptions" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" >
+            <Button x:ConnectionId='2' x:Name="Add_new_Clothes" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Content="Add new Clothes"                               HorizontalAlignment="Stretch" />
+            <Button x:ConnectionId='3' x:Name="Search_Button" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Content="Search for clothes"                            />
+            <Button x:ConnectionId='4' x:Name="View_Collection_Button" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" Content="View collection" HorizontalAlignment="Stretch"                                     />
+            <Button x:ConnectionId='5' x:Name="View_Favourite" Content="View favourite" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White" HorizontalAlignment="Stretch"                                    />
+            <Button x:ConnectionId='6' x:Name="Make_Combination" Content="Make combination" HorizontalAlignment="Stretch" FontWeight="Normal"  Foreground="White" FontSize="20"  BorderBrush="White"                                      />
+        </StackPanel>
+        
+            <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
             <AppBarButton x:ConnectionId='1' HorizontalAlignment="Left" Icon="Back" Label=""  VerticalAlignment="Bottom"                            Foreground="White" BorderThickness="0"/>
         </Grid>
     <!--</Grid>-->

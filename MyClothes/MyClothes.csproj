@@ -93,6 +93,7 @@
     <Compile Include="CombinationPage.xaml.cs">
       <DependentUpon>CombinationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Local Database\DatabaseHelperClass.cs" />
     <Compile Include="FavouriteViewer.xaml.cs">
       <DependentUpon>FavouriteViewer.xaml</DependentUpon>
     </Compile>
@@ -103,6 +104,7 @@
     <Compile Include="InsertClothes.xaml.cs">
       <DependentUpon>InsertClothes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Local Database\ReadClothesList.cs" />
     <Compile Include="MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
     </Compile>
@@ -110,6 +112,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPageViewModel.cs" />
+    <Compile Include="Model\Clothes_ID.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
@@ -120,6 +123,8 @@
     <Compile Include="SearchClothesResults.xaml.cs">
       <DependentUpon>SearchClothesResults.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Local Database\SQLite.cs" />
+    <Compile Include="Local Database\SQLiteAsync.cs" />
     <Compile Include="TodoItem.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,14 +252,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WP81, Version=3.10.0">
+    <SDKReference Include="SQLite.WP81, Version=3.10.2">
       <Name>SQLite for Windows Phone 8.1</Name>
     </SDKReference>
   </ItemGroup>
