@@ -13,37 +13,57 @@
             <ImageBrush Stretch="UniformToFill" ImageSource="Assets/l_blur.jpg"/>
         </Grid.Background>
         <Grid Background="#FF0F0E0E" Opacity="0.44" VerticalAlignment="Stretch">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Grid>
-                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Left" Text="Username:" FontSize="20"  Width="118" Foreground="Black"    />
-                    <TextBox  HorizontalAlignment="Right"   Text="" FontSize="20"   TextWrapping="Wrap"    Height="35" Width="110"  FontWeight="Bold"  />
-                </Grid>
-
-                <Grid>
-                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Left"   Text="Password:" FontSize="20"  Width="118" Foreground="Black"    />
-                    <TextBox  HorizontalAlignment="Right"   Text="" FontSize="20"   TextWrapping="Wrap"    Height="35" Width="110"  FontWeight="Bold" />
-                </Grid>
-                <Grid>
-                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Left"  Text="Name:" FontSize="20"  Width="118" Foreground="#FF060606"    />
-                    <TextBox x:ConnectionId='3'  FontWeight="Bold" HorizontalAlignment="Right"   Text="" FontSize="20"   TextWrapping="Wrap"    Height="35" Width="110"                                     />
-                </Grid>
-                <Grid>
-                    <TextBlock  TextWrapping="WrapWholeWords" HorizontalAlignment="Left"  Text="Surname:" FontSize="20"  Width="118"  Height="36" VerticalAlignment="Top" Foreground="Black"  />
-                    <TextBox  FontWeight="Bold" HorizontalAlignment="Right" Text="" FontSize="20"   TextWrapping="Wrap" Width="110"  VerticalAlignment="Top" Height="36"  />
-                </Grid>
-                <Grid>
-                    <ToggleSwitch x:ConnectionId='2'                                 OffContent="Male" OnContent="Female"  Grid.Row="4"  Height="98" VerticalAlignment="Top"  Foreground="Black" Margin="1,3.167,-1,0" FontFamily="Global User Interface"  />
-                </Grid>
-                <Grid>
-                    <AppBarButton  Visibility="Visible" Icon="Cancel" Label=""  Height="75"  Width="115"  HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                    <AppBarButton Visibility="Visible"  Icon="Accept" Label=""  Height="80"  Width="110" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                </Grid>
-
-
-            </StackPanel>
-
-            <AppBarButton x:ConnectionId='1' HorizontalAlignment="Left" Icon="Back" Label="" VerticalAlignment="Bottom"                           />
         </Grid>
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock  TextWrapping="WrapWholeWords" HorizontalAlignment="Right"  Text="Username:" FontSize="20"  Width="118" Foreground="White" Grid.Column="0" Margin="0,10,0,0"     />
+                <TextBox  HorizontalAlignment="Left"   Text="" FontSize="20"   TextWrapping="Wrap"    Height="35" Width="110"  FontWeight="Bold" Grid.Column="1" Margin="0,10,0,0" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Right"   Text="Password:"  FontSize="20"  Width="118" Foreground="White"   Grid.Column="0" Margin="0,10,0,0" />
+                <TextBox  HorizontalAlignment="Left"   Text="" FontSize="20"   TextWrapping="Wrap"    Height="35" Width="110"  FontWeight="Bold" Grid.Column="1" Margin="0,10,0,0"  />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Right"  Text="Name:" FontSize="20"  Width="118" Foreground="White" Grid.Column="0" Margin="0,10,0,0"    />
+                <TextBox x:ConnectionId='3'  FontWeight="Bold" HorizontalAlignment="Left"   Text="" FontSize="20"   TextWrapping="Wrap"    Height="35" Width="110" Grid.Column="1"                                    Margin="0,10,0,0"  />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock  TextWrapping="WrapWholeWords" HorizontalAlignment="Right"  Text="Surname:" FontSize="20"  Width="118"  Height="35" VerticalAlignment="Top" Foreground="White" Grid.Column="0" Margin="0,10,0,0"  />
+                <TextBox  FontWeight="Bold" HorizontalAlignment="Left" Text="" FontSize="20"   TextWrapping="Wrap" Width="110"  VerticalAlignment="Top" Height="35" Grid.Column="1" Margin="0,10,0,0" />
+            </Grid>
+            <Grid>
+                <ToggleSwitch x:ConnectionId='2'                                 OffContent="Male" OnContent="Female"  Grid.Row="4"  Height="65" Width="228" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="White" FontFamily="Global User Interface"  />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <AppBarButton  Visibility="Visible" Icon="Cancel" Label=""  Height="80"  Width="115"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1"/>
+                <AppBarButton Visibility="Visible"  Icon="Accept" Label=""  Height="80"  Width="115" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"/>
+            </Grid>
+
+
+        </StackPanel>
+
+        <AppBarButton x:ConnectionId='1' HorizontalAlignment="Left" Icon="Back" Label="" VerticalAlignment="Bottom"                           />
     </Grid>
 </Page>
 

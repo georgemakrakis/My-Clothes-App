@@ -50,6 +50,7 @@ namespace MyClothes
 
         private void Back_Btn_Click(object sender, RoutedEventArgs e)
         {
+            CleanCapture();
             Frame.GoBack();
         }
 
@@ -494,8 +495,9 @@ namespace MyClothes
         }
         #endregion
 
-        private void Save_Btn1_Click(object sender, RoutedEventArgs e)
+        private void Save_Pic_Btn_Click(object sender, RoutedEventArgs e)
         {
+            CleanCapture();
             Frame.Navigate(typeof(InsertClothes));
         }
 

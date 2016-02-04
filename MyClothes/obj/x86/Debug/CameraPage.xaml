@@ -17,7 +17,7 @@
             <AppBarButton x:ConnectionId='2' x:Name="Save_Btn" HorizontalAlignment="Center" Icon="Camera" Label=""  VerticalAlignment="Top"                       />
             <AppBarButton x:ConnectionId='3' x:Name="Back_Btn" HorizontalAlignment="Left" Icon="Back" Label="" VerticalAlignment="Bottom"                       />
             
-            <AppBarButton x:ConnectionId='4' x:Name="Save_Btn1" HorizontalAlignment="Right" Icon="Save" Label=""  VerticalAlignment="Top"                        />
+            <AppBarButton x:ConnectionId='4' x:Name="Save_Pic_Btn" HorizontalAlignment="Right" Icon="Save" Label=""  VerticalAlignment="Top"                           />
         </Grid>
         <AppBarButton x:ConnectionId='1' x:Name="Capture_Btn" HorizontalAlignment="Right" Icon="View" Label="Camera Off" VerticalAlignment="Top"                          />
     </Grid>

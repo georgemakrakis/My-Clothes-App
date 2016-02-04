@@ -13,23 +13,25 @@
         <Grid.Background>
             <ImageBrush ImageSource="Assets/g.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Grid Background="#FF0F0E0E" Opacity="0.45" VerticalAlignment="Stretch">
-            <StackPanel Name="User" VerticalAlignment="Bottom" Margin="0,0,0,52" >
-                <TextBlock Text="Warning" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" />
-                <Grid>
-                    <Button x:ConnectionId='3'  x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in"                       />
-                    <Button x:ConnectionId='4'  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out"                       />
-                </Grid>
-                <TextBox Text="UserName" FontSize="20" />
-                <TextBox Text="PassWord" FontSize="20"/>
-                <TextBlock Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
-            </StackPanel>
-
-            <Button x:ConnectionId='1' Content="Sign in" VerticalAlignment="Bottom"                             FontSize="20"  />
-            <Button x:ConnectionId='2'  Content="Register" VerticalAlignment="Bottom" HorizontalAlignment="Right"                              FontSize="20" />
-            <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
-            <TextBlock x:Name="User1"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="User Profile :" FontSize="30" TextWrapping="Wrap"  Foreground="White" />
+        <Grid Background="#FF0F0E0E" Opacity="0.55" VerticalAlignment="Stretch">
         </Grid>
+        <StackPanel Name="User" VerticalAlignment="Bottom">
+            <TextBlock Text="Warning" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" />
+            <Grid>
+                <Button x:ConnectionId='3'  x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in"                       />
+                <Button x:ConnectionId='4'  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out"                       />
+            </Grid>
+            <TextBox Text="UserName" FontSize="20" />
+            <TextBox Text="PassWord" FontSize="20"/>
+            <TextBlock Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
+       
+        <Grid>
+        <Button x:ConnectionId='1' Content="Sign in" VerticalAlignment="Bottom"                             FontSize="20"  />
+        <Button x:ConnectionId='2'  Content="Register" VerticalAlignment="Bottom" HorizontalAlignment="Right"                              FontSize="20" />
+        </Grid>
+        </StackPanel>
+        <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
+        <TextBlock x:Name="User1"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="User Profile :" FontSize="30" TextWrapping="Wrap"  Foreground="White" />
     </Grid>
 </Page>
 

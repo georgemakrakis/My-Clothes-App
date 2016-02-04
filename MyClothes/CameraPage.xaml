@@ -17,7 +17,7 @@
             <AppBarButton x:Name="Save_Btn" HorizontalAlignment="Center" Icon="Camera" Label=""  VerticalAlignment="Top" Click="Save_Btn_Click"/>
             <AppBarButton x:Name="Back_Btn" HorizontalAlignment="Left" Icon="Back" Label="" VerticalAlignment="Bottom" Click="Back_Btn_Click"/>
             
-            <AppBarButton x:Name="Save_Btn1" HorizontalAlignment="Right" Icon="Save" Label=""  VerticalAlignment="Top" Click="Save_Btn1_Click"/>
+            <AppBarButton x:Name="Save_Pic_Btn" HorizontalAlignment="Right" Icon="Save" Label=""  VerticalAlignment="Top" Click="Save_Pic_Btn_Click"/>
         </Grid>
         <AppBarButton x:Name="Capture_Btn" HorizontalAlignment="Right" Icon="View" Label="Camera Off" VerticalAlignment="Top" Click="Capture_Btn_Click"/>
     </Grid>

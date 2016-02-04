@@ -19,7 +19,7 @@
                 <Button x:ConnectionId='6'  Margin="20,0,0,0" Content="Show Result"                          />
                 
             </StackPanel>
-            <ListBox x:ConnectionId='5' Background="Transparent" Margin="6,5.5,6,160" Height="auto" BorderThickness="2" MaxHeight="580" Grid.Row="1" x:Name="listBoxobj"                                               >
+            <ListBox x:ConnectionId='5' Background="Transparent" HorizontalAlignment="Center" Height="auto" BorderThickness="2" MaxHeight="580" Grid.Row="1" x:Name="listBoxobj"                                               >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Width="350" >
