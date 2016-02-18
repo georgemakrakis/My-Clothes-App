@@ -12,7 +12,7 @@ namespace MyClothes
     class DatabaseHelperClass
     {
         SQLiteConnection MyConn;
-
+        public string result_select = "";
         public async Task<bool> onCreate(string db_path)
         {
             try
@@ -46,11 +46,42 @@ namespace MyClothes
             }
 
         }
-        public Clothes_ID ReadClothes(int clothesId)
+        public Clothes_ID ReadClothesSeason(int clothesId)
         {
+            //string p_path = PassPictureData.picture_view_source2;
+            var obj = App.Current as App;
+            string p_path = obj.exam2;
+
             using (var MyConn = new SQLiteConnection(App.db_path))
             {
-                var existingId = MyConn.Query<Clothes_ID>("select * from Clothes_ID where Id =" + clothesId).FirstOrDefault();
+                var existingId = MyConn.Query<Clothes_ID>("select season,kind,category from Clothes_ID where picture_path ='" + p_path+"'").FirstOrDefault();
+                result_select = existingId.season.ToString();
+                return existingId;
+            }
+        }
+        public Clothes_ID ReadClothesKind(int clothesId)
+        {
+            //string p_path = PassPictureData.picture_view_source2;
+            var obj = App.Current as App;
+            string p_path = obj.exam2;
+
+            using (var MyConn = new SQLiteConnection(App.db_path))
+            {
+                var existingId = MyConn.Query<Clothes_ID>("select season,kind,category from Clothes_ID where picture_path ='" + p_path + "'").FirstOrDefault();
+                result_select = existingId.kind.ToString();
+                return existingId;
+            }
+        }
+        public Clothes_ID ReadClothesCategory(int clothesId)
+        {
+            //string p_path = PassPictureData.picture_view_source2;
+            var obj = App.Current as App;
+            string p_path = obj.exam2;
+
+            using (var MyConn = new SQLiteConnection(App.db_path))
+            {
+                var existingId = MyConn.Query<Clothes_ID>("select season,kind,category from Clothes_ID where picture_path ='" + p_path + "'").FirstOrDefault();
+                result_select = existingId.category.ToString();
                 return existingId;
             }
         }

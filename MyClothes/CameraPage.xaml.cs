@@ -44,6 +44,11 @@ namespace MyClothes
         /// <param name="e">Event data that describes how this page was reached.
         /// This parameter is typically used to configure the page.</param>    
 
+        //declare string for picture filename
+
+
+
+        private static string test = "yuhgvbghhg"; 
         private MediaCapture captureManager;
         private bool isPreviewing = false;
         private WriteableBitmap bitmap;
@@ -313,6 +318,8 @@ namespace MyClothes
 
             //load saved image
             LoadCapturedphoto(captureFileName);
+
+            PassPictureData.picture_source = captureFileName;
         }
 
         /// <summary>
@@ -320,7 +327,6 @@ namespace MyClothes
         /// </summary>
         private async void CaptureSixteenByNineImage()
         {
-            //declare string for filename
             string captureFileName = string.Empty;
             //declare image format
             ImageEncodingProperties format = ImageEncodingProperties.CreateJpeg();
@@ -344,7 +350,9 @@ namespace MyClothes
                 //save the image
                 StorageFolder folder = KnownFolders.SavedPictures;
                 StorageFile capturefile = await folder.CreateFileAsync("photo_" + DateTime.Now.Ticks.ToString() + ".jpg", CreationCollisionOption.ReplaceExisting);
+                
                 captureFileName = capturefile.Name;
+                
 
                 //store stream in file
                 using (var fileStream = await capturefile.OpenStreamForWriteAsync())
@@ -364,6 +372,8 @@ namespace MyClothes
 
             //load saved image
             LoadCapturedphoto(captureFileName);
+
+            PassPictureData.picture_source = captureFileName;
         }
 
         /// <summary>
@@ -398,12 +408,15 @@ namespace MyClothes
             StorageFile savedPicture = await pictureLibrary.GetFileAsync(filename);
             ImageProperties imgProp = await savedPicture.Properties.GetImagePropertiesAsync();
             var savedPictureStream = await savedPicture.OpenAsync(FileAccessMode.Read);
-
+            
             //set image properties and show the taken photo
             bitmap = new WriteableBitmap((int)imgProp.Width, (int)imgProp.Height);
             await bitmap.SetSourceAsync(savedPictureStream);
             takenImage.Source = bitmap;
             takenImage.Visibility = Visibility.Visible;
+
+            PassPictureData.picture_source = filename;
+            test = filename;
         }
         #endregion
 
@@ -498,6 +511,12 @@ namespace MyClothes
         private void Save_Pic_Btn_Click(object sender, RoutedEventArgs e)
         {
             CleanCapture();
+
+            PassPictureData.picture_source = test;
+
+            var obj = App.Current as App;
+            obj.exam = test;
+
             Frame.Navigate(typeof(InsertClothes));
         }
 

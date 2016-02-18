@@ -70,10 +70,13 @@ namespace MyClothes
             string str = guid.ToString();
             int unique = Convert.ToInt32(str);
             */
+
+            //Converting ComboBoxItem selected item to string 
             string season = ((ComboBoxItem)ComboBoxSeason.SelectedItem).Content.ToString();
             string category= ((ComboBoxItem)ComboBoxCategory.SelectedItem).Content.ToString();
             string kind = ((ComboBoxItem)ComboBoxKind.SelectedItem).Content.ToString();
-            if (season.Equals("None") || category.Equals("None") || kind.Equals("None") )
+            System.Diagnostics.Debug.WriteLine(season + " " + category + " " + kind);
+            if (season.Equals("None") || category.Equals("None") || kind.Equals("None") )//All three fields must me filled
             {
                 MessageDialog messageDialog = new MessageDialog("Please fill three fields");
                 //Combobox should not be none   
@@ -81,10 +84,25 @@ namespace MyClothes
             }
             else
             {
-                db_helper.Insert(new Clothes_ID(ComboBoxSeason.SelectedItem.ToString(), ComboBoxCategory.SelectedItem.ToString(), ComboBoxKind.SelectedItem.ToString()));
+                //Calling insert function from helper class
+                string pass_file_name = "";
+                ///pass_file_name = PassPictureData.picture_source;
+                var obj = App.Current as App;
+                pass_file_name = obj.exam;
+                db_helper.Insert(new Clothes_ID(season, category, kind,obj.exam));
                 MessageDialog messageDialog = new MessageDialog("Insert Successfull");
                 await messageDialog.ShowAsync();
+
+                Frame.Navigate(typeof(MainMenuPage));
+
             }
+        }
+
+        public void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= TextBox_GotFocus;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

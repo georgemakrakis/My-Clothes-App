@@ -39,6 +39,8 @@ namespace MyClothes
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         /// 
+        public string exam { get; set; }
+        public string exam2 { get; set; }
         public static MobileServiceClient MobileService = new MobileServiceClient("https://myclothes.azurewebsites.net");
 
         public static string db_path = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "ClothesManager.sqlite"));

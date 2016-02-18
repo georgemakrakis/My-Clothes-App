@@ -10,8 +10,9 @@
 
     <Grid >
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FF333333">
-            <AppBarButton x:ConnectionId='1' x:Name="UnFavourite_Button"  Icon="UnFavorite" Label=""  VerticalAlignment="Bottom" HorizontalAlignment="Center"                                 />
-            <AppBarButton x:ConnectionId='2'                          HorizontalAlignment="Left" Icon="Back" Label=""  VerticalAlignment="Bottom"/>      
+            <AppBarButton x:ConnectionId='1' Width="80" Height="60" x:Name="UnFavourite_Button"  Icon="UnFavorite" Label=""  VerticalAlignment="Bottom" HorizontalAlignment="Center"                                 />
+            <AppBarButton x:ConnectionId='2' Width="80" Height="60"                          HorizontalAlignment="Left" Icon="Back" Label=""  VerticalAlignment="Bottom"/>
+            <AppBarButton Width="80" Height="60" HorizontalAlignment="Right" Icon="More" />
         </Grid>
     </Grid>
 </Page>

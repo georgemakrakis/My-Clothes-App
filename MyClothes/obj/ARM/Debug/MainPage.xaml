@@ -16,22 +16,22 @@
         <Grid Background="#FF0F0E0E" Opacity="0.55" VerticalAlignment="Stretch">
         </Grid>
         <StackPanel Name="User" VerticalAlignment="Bottom">
-            <TextBlock Text="Warning" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" />
+            <!-- <TextBlock Text="" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" /> -->
             <Grid>
-                <Button x:ConnectionId='3'  x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in"                       />
-                <Button x:ConnectionId='4'  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out"                       />
+                <Button x:ConnectionId='5' FontWeight="Bold" x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in"                       />
+                <Button x:ConnectionId='6' FontWeight="Bold"  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out"                       />
             </Grid>
-            <TextBox Text="UserName" FontSize="20" />
-            <TextBox Text="PassWord" FontSize="20"/>
-            <TextBlock Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
-       
-        <Grid>
-        <Button x:ConnectionId='1' Content="Sign in" VerticalAlignment="Bottom"                             FontSize="20"  />
-        <Button x:ConnectionId='2'  Content="Register" VerticalAlignment="Bottom" HorizontalAlignment="Right"                              FontSize="20" />
-        </Grid>
+            <TextBox x:ConnectionId='1'  x:Name="usernameTxtblck" Foreground="Gray"                         Text="Username" FontSize="20"                                       />
+            <TextBox x:ConnectionId='2'  x:Name="passwordTxtblck" Foreground="Gray"                             Text="Password" FontSize="20"                                      />
+            <TextBlock FontWeight="Bold" Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
+
+            <Grid>
+                <Button x:ConnectionId='3' Content="Sign in" VerticalAlignment="Bottom"                             FontSize="20"  />
+                <Button x:ConnectionId='4'  Content="Register" VerticalAlignment="Bottom" HorizontalAlignment="Right"                              FontSize="20" />
+            </Grid>
         </StackPanel>
-        <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
-        <TextBlock x:Name="User1"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="User Profile :" FontSize="30" TextWrapping="Wrap"  Foreground="White" />
+        <TextBlock  Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
+        <TextBlock FontWeight="Bold" x:Name="User1"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="User Profile :" FontSize="30" TextWrapping="Wrap"  Foreground="White" />
     </Grid>
 </Page>
 

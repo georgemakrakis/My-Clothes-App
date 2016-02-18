@@ -17,7 +17,6 @@ using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
-using System.Linq;
 using Windows.Security.Credentials;
 using MyClothes.Helpers;
 using Facebook;
@@ -37,7 +36,8 @@ namespace MyClothes
     {
 
         private MobileServiceUser user;
-
+        private string defaultUsername = "Username";
+        private string defaultPassword = "Password";
         private async System.Threading.Tasks.Task<bool> AuthenticateAsync()
         {
             string message;
@@ -166,7 +166,6 @@ namespace MyClothes
         public MainPage()
         {
             this.InitializeComponent();
-
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
@@ -213,6 +212,25 @@ namespace MyClothes
 
         }
 
-       
+        public void GotFocusName(object sender, RoutedEventArgs e)
+        {
+            
+            usernameTxtblck.Text = usernameTxtblck.Text == defaultUsername ? string.Empty : usernameTxtblck.Text;
+        }
+
+        public void GotFocusPassword(object sender, RoutedEventArgs e)
+        {
+            passwordTxtblck.Text = passwordTxtblck.Text == defaultPassword ? string.Empty : passwordTxtblck.Text;
+        }
+
+        private void usernameTxtblck_LostFocus(object sender, RoutedEventArgs e)
+        {
+            usernameTxtblck.Text = usernameTxtblck.Text == string.Empty ? defaultUsername : usernameTxtblck.Text;
+        }
+
+        private void passwordTxtblck_LostFocus(object sender, RoutedEventArgs e)
+        {
+            passwordTxtblck.Text = passwordTxtblck.Text == string.Empty ? defaultPassword : passwordTxtblck.Text;
+        }
     }
 }

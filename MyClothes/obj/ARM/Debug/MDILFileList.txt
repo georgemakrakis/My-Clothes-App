@@ -1,1 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Files><file>\Facebook.dll</file><file>\GalaSoft.MvvmLight.dll</file><file>\GalaSoft.MvvmLight.Extras.dll</file><file>\GalaSoft.MvvmLight.Platform.dll</file><file>\Microsoft.Practices.ServiceLocation.dll</file><file>\Microsoft.WindowsAzure.Mobile.dll</file><file>\Microsoft.WindowsAzure.Mobile.Ext.dll</file><file>\MyClothes.exe</file><file>\Newtonsoft.Json.dll</file><file>\System.Net.Http.Extensions.dll</file><file>\System.Net.Http.Primitives.dll</file></Files>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <file>\Facebook.dll</file>
+  <file>\GalaSoft.MvvmLight.dll</file>
+  <file>\GalaSoft.MvvmLight.Extras.dll</file>
+  <file>\GalaSoft.MvvmLight.Platform.dll</file>
+  <file>\Microsoft.Practices.ServiceLocation.dll</file>
+  <file>\Microsoft.WindowsAzure.Mobile.dll</file>
+  <file>\Microsoft.WindowsAzure.Mobile.Ext.dll</file>
+  <file>\MyClothes.exe</file>
+  <file>\Newtonsoft.Json.dll</file>
+  <file>\System.Net.Http.Extensions.dll</file>
+  <file>\System.Net.Http.Primitives.dll</file>
+  <file>\Microsoft.Xaml.Interactions.dll</file>
+  <file>\Microsoft.Xaml.Interactivity.dll</file>
+</Files>

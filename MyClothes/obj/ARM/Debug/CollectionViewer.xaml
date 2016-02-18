@@ -10,49 +10,42 @@
 
     <Grid>
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" HorizontalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="446*"/>
+                <RowDefinition Height="137*"/>
             </Grid.RowDefinitions>
-            <StackPanel Width="400" Orientation="Horizontal" Grid.Row="0">
-                <Button x:ConnectionId='6'  Margin="20,0,0,0" Content="Show Result"                          />
-                
-            </StackPanel>
-            <ListBox x:ConnectionId='5' Background="Transparent" HorizontalAlignment="Center" Height="auto" BorderThickness="2" MaxHeight="580" Grid.Row="1" x:Name="listBoxobj"                                               >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Width="350" >
-                            <Border Margin="5" BorderBrush="White" BorderThickness="1">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Margin="5,0,0,0" Grid.Row="0" x:Name="NameTxt" TextWrapping="Wrap" Text="{Binding Name}" FontSize="28" Foreground="White"/>
-                                    <TextBlock Grid.Row="0" Text=">" FontSize="28"  HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
-                                    <TextBlock Margin="5,0,0,0" Grid.Row="1" x:Name="PhoneTxt"  TextWrapping="Wrap" Foreground="White" FontSize="18" Text="{Binding PhoneNumber}" />
-                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,35,0" Grid.Row="3" x:Name="CreateddateTxt" Foreground="White" FontSize="18" TextWrapping="Wrap" Text="{Binding CreationDate}" />
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <StackPanel Width="400" Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,0.5">
+                <Button x:ConnectionId='4' FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Content="Select Image"                           />
 
+            </StackPanel>
+            <Image x:Name="img" VerticalAlignment="Top"  Grid.Row="1" />
+
+        </Grid>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,0,0,60" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="18*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel  VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Column="0" Grid.ColumnSpan="2" Height="73" Margin="0,0,214,0">
+                <TextBlock FontWeight="Bold" x:Name="Kind" FontSize="20" Text="Kind:"/>
+                <TextBlock FontWeight="Bold" x:Name="Category" FontSize="20" Text="Category:"/>
+                <TextBlock FontWeight="Bold" x:Name="Season" FontSize="20" Text="Season:"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Column="1" Height="73" Margin="0.333,0,0,0"  >
+                <TextBlock FontWeight="Bold" x:Name="KindTxtBlck"     FontSize="20"  HorizontalAlignment="Left"   TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+                <TextBlock FontWeight="Bold" x:Name="CategoryTxtBlck" FontSize="20"  HorizontalAlignment="Left"   TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+                <TextBlock FontWeight="Bold" x:Name="SeasonTxtBlck"   FontSize="20"  HorizontalAlignment="Left"   TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+            </StackPanel>
         </Grid>
         <StackPanel VerticalAlignment="Bottom" Background="#FF333333">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="153*"/>
-                    <ColumnDefinition Width="94*"/>
-                    <ColumnDefinition Width="153*"/>
-                </Grid.ColumnDefinitions>
-                <AppBarButton x:ConnectionId='2' x:Name="Details_Button" HorizontalAlignment="Left" Icon="More"   Label=""                             Grid.Column="2" Height="78"  Width="80" />
-                <AppBarButton x:ConnectionId='3' x:Name="Favourite_Button" HorizontalAlignment="Right" Icon="Favorite"   Label=""                                 Grid.Column="0" Height="78" Width="80"/>
-                <AppBarButton x:ConnectionId='4' x:Name="Delete_Button" HorizontalAlignment="Stretch" Icon="Delete" Label=""                             Height="78"  Grid.Column="1" />
+                <!--   <AppBarButton x:Name="Details_Button" HorizontalAlignment="Left" Icon="More"   Label="" Click="Detail_Button_Click" Height="80"  Width="80"  /> -->
+                <AppBarButton x:ConnectionId='1' x:Name="Favourite_Button" HorizontalAlignment="Right" Icon="Favorite"   Label=""                                 Height="60" Width="80" />
+                <AppBarButton x:ConnectionId='2' x:Name="Delete_Button" HorizontalAlignment="Stretch" Icon="Delete" Label=""                             Height="60" Width="80" />
+                <AppBarButton x:ConnectionId='3' x:Name="Back_Button"  Icon="Back" Label=""                           Height="60" Width="80"/>
             </Grid>
-            <AppBarButton x:ConnectionId='1' x:Name="Back_Button"  Icon="Back" Label=""                          />
         </StackPanel>
     </Grid>
 </Page>

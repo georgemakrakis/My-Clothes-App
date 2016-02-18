@@ -14,7 +14,7 @@
             <ImageBrush Stretch="UniformToFill" ImageSource="Assets/h_blur1.jpg" Opacity="0.55"/>
         </Grid.Background>
 
-        <Grid Background="#FF0F0E0E" Opacity="0.1" VerticalAlignment="Stretch">
+        <Grid Background="#FF0F0E0E" Opacity="0.55" VerticalAlignment="Stretch">
         </Grid>
         
         <StackPanel Name="MenuOptions" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" >

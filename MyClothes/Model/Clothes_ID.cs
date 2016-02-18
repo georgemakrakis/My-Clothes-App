@@ -13,15 +13,17 @@ namespace MyClothes.Model
         public string season { get; set; }
         public string category { get; set; }
         public string kind { get; set; }
+        public string picture_path { get; set; }
         public Clothes_ID()
         {
 
         }
-        public Clothes_ID(string season, string category, string kind)
+        public Clothes_ID(string season, string category, string kind,string picture_path)
         { 
             this.season = season;
             this.category = category;
             this.kind = kind;
+            this.picture_path = picture_path;
         }
     }
 }

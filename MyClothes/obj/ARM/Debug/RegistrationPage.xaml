@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="Assets/l_blur.jpg"/>
         </Grid.Background>
-        <Grid Background="#FF0F0E0E" Opacity="0.44" VerticalAlignment="Stretch">
+        <Grid Background="#FF0F0E0E" Opacity="0.55" VerticalAlignment="Stretch">
         </Grid>
 
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" >

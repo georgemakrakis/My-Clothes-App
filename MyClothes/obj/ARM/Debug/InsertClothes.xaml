@@ -20,7 +20,7 @@
 
         <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            <TextBlock Text="Pick Season" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left"  FontSize="20" />
+            <TextBlock FontWeight="Bold" Text="Pick Season" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left"  FontSize="20" />
 
             <ComboBox x:Name="ComboBoxSeason"  HorizontalAlignment="Left" Height="71" Width="326" Background="{x:Null}" BorderBrush="White" Foreground="White" >
                 <ComboBoxItem Content="None" IsSelected="True"/>
@@ -34,7 +34,7 @@
                 <!-- prepei na to kanoume drop down menu omorfo -->
             </ComboBox>
 
-            <TextBlock FontSize="20" Text="Pick Category" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+            <TextBlock FontWeight="Bold" FontSize="20" Text="Pick Category" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left"/>
             <ComboBox x:Name="ComboBoxCategory" BorderBrush="White"  HorizontalAlignment="Left" Height="71" Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="Casual"/>
@@ -44,7 +44,7 @@
                 <ComboBoxItem Content="Shoes"/>
                 <ComboBoxItem Content="Accesories"/>
             </ComboBox>
-            <TextBlock FontSize="20" Foreground="White" Text="Pick Kind" TextWrapping="Wrap" HorizontalAlignment="Left"  />
+            <TextBlock FontWeight="Bold" FontSize="20" Foreground="White" Text="Pick Kind" TextWrapping="Wrap" HorizontalAlignment="Left"  />
             <ComboBox x:Name="ComboBoxKind" Foreground="Black" BorderBrush="White"  HorizontalAlignment="Left" Height="71" Width="326">
                 <ComboBoxItem Content="None" IsSelected="True"/>
                 <ComboBoxItem Content="T-Shirt-Polos"/>
@@ -70,8 +70,8 @@
                 <ComboBoxItem Content="Jackets-Coats"/>
                 <ComboBoxItem Content="Hoodies"/>
             </ComboBox>
-            <TextBox HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="More Details.." Height="139"  Width="400"   />
-            <TextBlock Text="Warning!!" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+            <TextBox x:ConnectionId='4'                             HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="More Details.." Height="139"  Width="400"   />
+            <TextBlock  Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
         </StackPanel>
 
        

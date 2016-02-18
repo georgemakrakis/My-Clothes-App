@@ -16,21 +16,21 @@
         <Grid Background="#FF0F0E0E" Opacity="0.55" VerticalAlignment="Stretch">
         </Grid>
         <StackPanel Name="User" VerticalAlignment="Bottom">
-            <TextBlock Text="Warning" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" />
+            <!-- <TextBlock Text="" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFFDF6F6" /> -->
             <Grid>
-                <Button  x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in" Click="FbLogin_Click" />
-                <Button  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out" Click="FbLogout_Click"/>
+                <Button FontWeight="Bold" x:Name="FbLogin" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Visibility="Visible" Content="Facebook Sign in" Click="FbLogin_Click" />
+                <Button FontWeight="Bold"  x:Name="FbLogout" VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Visibility="Visible" Content="Facebook Sign out" Click="FbLogout_Click"/>
             </Grid>
-            <TextBox Text="UserName" FontSize="20" />
-            <TextBox Text="PassWord" FontSize="20"/>
-            <TextBlock Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
-       
-        <Grid>
-        <Button Content="Sign in" VerticalAlignment="Bottom" Click="Sign_in_ButtonClick" FontSize="20"  />
-        <Button  Content="Register" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Register_ButtonClick" FontSize="20" />
-        </Grid>
+            <TextBox  x:Name="usernameTxtblck" Foreground="Gray" GotFocus="GotFocusName" Text="Username" FontSize="20" LostFocus="usernameTxtblck_LostFocus" />
+            <TextBox  x:Name="passwordTxtblck" Foreground="Gray" GotFocus="GotFocusPassword" Text="Password" FontSize="20" LostFocus="passwordTxtblck_LostFocus"/>
+            <TextBlock FontWeight="Bold" Text="WRONG" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
+
+            <Grid>
+                <Button Content="Sign in" VerticalAlignment="Bottom" Click="Sign_in_ButtonClick" FontSize="20"  />
+                <Button  Content="Register" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Register_ButtonClick" FontSize="20" />
+            </Grid>
         </StackPanel>
-        <TextBlock Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
-        <TextBlock x:Name="User1"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="User Profile :" FontSize="30" TextWrapping="Wrap"  Foreground="White" />
+        <TextBlock  Text="My Clothes"  TextWrapping="WrapWholeWords"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="44" FontWeight="Bold" FontSize="40" FontFamily="Rockwell" Foreground="White"  />
+        <TextBlock FontWeight="Bold" x:Name="User1"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="User Profile :" FontSize="30" TextWrapping="Wrap"  Foreground="White" />
     </Grid>
 </Page>

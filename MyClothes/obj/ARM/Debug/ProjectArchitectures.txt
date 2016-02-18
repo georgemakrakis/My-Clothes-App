@@ -1,1 +1,1 @@
-C:\Users\George\Documents\Visual Studio 2013\Projects\MyClothes\MyClothes\MyClothes.csproj;arm
+C:\Users\George\Documents\Visual Studio 2015\Projects\MyClothes\MyClothes\MyClothes.csproj;arm
